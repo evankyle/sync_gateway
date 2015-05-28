@@ -137,7 +137,7 @@ function(doc, oldDoc) {
 	// Create list docs
 	input := `{"docs": [`
 
-	for i := 1; i <= 1000; i++ {
+	for i := 1; i <= 100; i++ {
 		if i > 1 {
 			input = input + `,`
 		}
@@ -160,11 +160,11 @@ function(doc, oldDoc) {
 		assert.Equals(t, err, nil)
 
 		log.Printf("Got %d change entries", len(changes))
-		assert.Equals(t, len(changes), 2001)
+		assert.Equals(t, len(changes), 201)
 	}()
 
-	// Make 10 bulk docs calls, 100 docs each, all triggering access grants to the list docs.
-	for j := 0; j < 10; j++ {
+	// Make bulk docs calls, 100 docs each, all triggering access grants to the list docs.
+	for j := 0; j < 1; j++ {
 		input := `{"docs": [`
 		for i := 1; i <= 100; i++ {
 			if i > 1 {
