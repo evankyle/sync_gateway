@@ -158,7 +158,8 @@ func (h *handler) makeSessionFromNameAndEmail(username, email string, createUser
 		}
 
 		if len(email) < 1 {
-			return base.HTTPErrorf(http.StatusBadRequest, "Cannot register new user: email is missing")
+			//return base.HTTPErrorf(http.StatusBadRequest, "Cannot register new user: email is missing")
+      email = username;
 		}
 
 		// Create a User with the given email address as username and a random password.
